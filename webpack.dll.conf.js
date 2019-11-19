@@ -1,35 +1,3 @@
-![](./static/react.jpg)
-
-# 基于React的项目初始化代码
-
-### 项目核心依赖
-axios  
-immutable  
-redux-immutable  
-react-loadable  
-redux-thunk  
-styled-components  
-customize-cra  
-react-app-rewired  
-
-
-
-### 项目初始化
-```js
-yarn install
-npm start
-```
-
-### 扩展creat-react-app webpack配置
-
-1.不推荐使用react-scripts eject 进行webpack文件进行扩展
-
-2.使用customize-cra和react-app-rewired来进行webpack的覆盖式修改
-
-
-### 扩展demo，添加dllplugin实现库类代码抽离打包
-
-```js
 const path = require('path')
 const webpack = require('webpack')
 const {
@@ -70,20 +38,3 @@ module.exports = {
     })
   ]
 }
-
-```
-
-### pagejson修改
-
-```json
- "scripts": {
-    "start": "react-app-rewired start",
-    "dll": "webpack -p --progress --config ./webpack.dll.conf.js",
-    "build": "react-app-rewired build",
-    "test": "react-app-rewired test",
-    "eject": "react-scripts eject"
-  }
-}
-```
-
-
